@@ -11,7 +11,7 @@ export class WinModalComponent {
   @Output() public isGameOver = new EventEmitter<boolean>();
   @Input() public winnerTextClass: string = '';
 
-  public playAgain(): void {
+  public playAgain (): void {
     this.isGameOver.emit(false);
   }
 }

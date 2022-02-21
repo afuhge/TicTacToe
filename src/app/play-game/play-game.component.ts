@@ -29,17 +29,6 @@ export class PlayGameComponent {
     return classes.join(' ');
   }
 
-  private reset (): void {
-    for (let i = 0; i < 3; i++) {
-      this.field[i] = [];
-      for (let j = 0; j < 3; j++) {
-        this.field[i][j] = FieldStatusEnum.EMPTY;
-      }
-    }
-    this.counter = 9;
-    this.winner = 'none';
-  }
-
   public handleIsGameOver (gameOver: boolean): void {
     this.isGameOver = gameOver;
     this.reset();
@@ -59,6 +48,17 @@ export class PlayGameComponent {
     if (this.counter === 0) {
       this.isGameOver = true;
     }
+  }
+
+  private reset (): void {
+    for (let i = 0; i < 3; i++) {
+      this.field[i] = [];
+      for (let j = 0; j < 3; j++) {
+        this.field[i][j] = FieldStatusEnum.EMPTY;
+      }
+    }
+    this.counter = 9;
+    this.winner = 'none';
   }
 
   private checkRows (i: number): boolean {
