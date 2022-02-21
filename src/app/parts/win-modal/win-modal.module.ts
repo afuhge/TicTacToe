@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WinModalComponent } from './win-modal.component';
 
-
-
 @NgModule({
   declarations: [
     WinModalComponent
@@ -13,4 +11,4 @@ import { WinModalComponent } from './win-modal.component';
   ],
   exports: [WinModalComponent],
 })
-export class WinModalModule { }
+export class WinModalModule {}

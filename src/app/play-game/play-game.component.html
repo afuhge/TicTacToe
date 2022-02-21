@@ -1,12 +1,47 @@
-<button (click)="openModal()">Open Modal</button>
+<div class="mx-auto p-8 relative">
+  <div class="grid grid-cols-3 mt-10">
+    <ng-container *ngFor="let fieldItem of field; let i = index;">
+      <ng-container *ngFor="let item of fieldItem; let j = index;">
+        <div class="h-[186px] flex items-center justify-center py-4 border-white" [ngClass]="getBorderClasses(i,j)">
+          <button *ngIf="item === fieldEnum.EMPTY;" class="h-full w-full" (click)="setItem(i,j)"></button>
+          <img *ngIf="item === fieldEnum.X" src="assets/X.png" alt="X">
+          <img *ngIf="item === fieldEnum.O" src="assets/O.png" alt="O">
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
+
 
 <ng-container *ngIf="isGameOver">
-  <ng-container *ngIf="greenWins; else redWins">
-    <app-win-modal [buttonTextColor]="'text-green  hover:bg-green'" [winnerText]="'Green wins!'"
-    [classes]="'bg-green'" (isGameOver)="handleIsGameOver($event)"></app-win-modal>
+  <ng-container *ngIf="winner === 'none';">
+    <div class="absolute top-[25px] left-[25px]">
+      <app-win-modal
+        [buttonClasses]="'text-green text-2xl border-2 border-green font-semibold px-16 py-6 rounded-2xl hover:bg-green hover:text-white'"
+        [winnerText]="'Draw!'"
+        [classes]="'bg-white text-green'"
+        (isGameOver)="handleIsGameOver($event)">
+      </app-win-modal>
+
+    </div>
   </ng-container>
-  <ng-template #redWins>
-    <app-win-modal [buttonTextColor]="'text-red hover:bg-red'" [winnerText]="'Red wins!'"
-                   [classes]="'bg-red'" (isGameOver)="handleIsGameOver($event)"></app-win-modal>
-  </ng-template>
+  <ng-container *ngIf="winner === 'green';">
+    <div class="absolute top-[25px] left-[25px]">
+      <app-win-modal [buttonClasses]="'text-green  hover:bg-green secondary-button hover:text-white'"
+                     [winnerText]="'Green wins!'"
+                     [classes]="'bg-green'"
+                     (isGameOver)="handleIsGameOver($event)">
+      </app-win-modal>
+
+    </div>
+  </ng-container>
+  <ng-container *ngIf="winner === 'red'">
+    <div class="absolute top-[25px] left-[25px]">
+      <app-win-modal [buttonClasses]="'text-red hover:bg-red secondary-button hover:text-white'"
+                     [winnerText]="'Red wins!'"
+                     [classes]="'bg-red'"
+                     (isGameOver)="handleIsGameOver($event)">
+      </app-win-modal>
+    </div>
+  </ng-container>
 </ng-container>

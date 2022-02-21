@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { GameIsStartedGuard } from './core/guards/game-is-started-guard';
+import { GameIsStartedResolver } from './core/resolvers/game-is-started.resolver';
 
 export const routes: Routes = [
   {
@@ -7,9 +7,13 @@ export const routes: Routes = [
     loadChildren: () => import('./start-game/start-game.module').then(m => m.StartGameModule)
   },
   {
-    resolve: [GameIsStartedGuard],
+    resolve: [GameIsStartedResolver],
     path: 'play',
     loadChildren: () => import('./play-game/play-game.module').then(m => m.PlayGameModule)
+  },
+  {
+    path: 'info',
+    loadChildren: () => import('./info/info.module').then(m => m.InfoModule)
   },
   {
     path: '',
@@ -20,4 +24,4 @@ export const routes: Routes = [
     path: '**',
     loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
   },
-]
+];

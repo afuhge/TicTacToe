@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { VersusComponent } from './versus.component';
 
-
-
 @NgModule({
   declarations: [
     VersusComponent
@@ -15,4 +13,4 @@ import { VersusComponent } from './versus.component';
     CommonModule
   ]
 })
-export class VersusModule { }
+export class VersusModule {}

@@ -4,8 +4,6 @@ import { StartGameComponent } from './start-game.component';
 import { VersusModule } from '../parts/versus/versus.module';
 import { RouterModule } from '@angular/router';
 
-
-
 @NgModule({
   declarations: [
     StartGameComponent
@@ -22,4 +20,4 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [StartGameComponent],
 })
-export class StartGameModule { }
+export class StartGameModule {}

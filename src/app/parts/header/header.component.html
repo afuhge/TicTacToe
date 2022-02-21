@@ -1,1 +1,13 @@
-<p>header works!</p>
+<div class="flex justify-between items-center">
+  <div class="flex items-center space-x-4 cursor-pointer" (click)="navigateToStart()">
+    <div class="w-[70px]">
+      <img src="assets/logo.png" alt="logo">
+    </div>
+    <div class="text-2xl">
+      Tic Tac Toe
+    </div>
+  </div>
+  <div class="text-white text-2xl cursor-pointer" (click)="navigateToInfoPage()">
+    <fa-icon [icon]="info"></fa-icon>
+  </div>
+</div>

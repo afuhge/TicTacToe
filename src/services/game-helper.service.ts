@@ -12,11 +12,11 @@ export class GameHelperService {
     this.gameIsStarted$ = this.gameIsStartedSubject.asObservable();
   }
 
-  public startGame(): void {
+  public startGame (): void {
     this.gameIsStartedSubject.next(true);
   }
 
-  public hasGameStarted(): boolean {
-   return this.gameIsStartedSubject.value;
+  public hasGameStarted (): boolean {
+    return this.gameIsStartedSubject.value;
   }
 }

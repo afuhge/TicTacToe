@@ -5,7 +5,8 @@ import { AppComponent } from './app.component';
 import { VersusModule } from './parts/versus/versus.module';
 import { RouterModule } from '@angular/router';
 import { routes } from './routes';
-import { GameIsStartedGuard } from './core/guards/game-is-started-guard';
+import { GameIsStartedResolver } from './core/resolvers/game-is-started.resolver';
+import { HeaderModule } from './parts/header/header.module';
 
 @NgModule({
   declarations: [
@@ -14,11 +15,12 @@ import { GameIsStartedGuard } from './core/guards/game-is-started-guard';
   imports: [
     BrowserModule,
     VersusModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HeaderModule
   ],
   providers: [
-    GameIsStartedGuard,
+    GameIsStartedResolver,
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

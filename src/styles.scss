@@ -14,8 +14,10 @@ body {
 
 .primary-button {
   @apply bg-white text-2xl font-semibold text-red px-16 py-6 rounded-2xl hover:bg-green hover:text-white;
+  box-shadow: 0 0 60px #0F7173;
 }
 
 .secondary-button {
-  @apply bg-white text-2xl border-2 border-white font-semibold px-16 py-6 rounded-2xl;
+  @apply bg-white text-2xl border-2 border-white font-semibold px-16 py-6 rounded-2xl hover:text-white;
 }
+

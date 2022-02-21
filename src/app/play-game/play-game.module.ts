@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PlayGameComponent } from './play-game.component';
 import { RouterModule } from '@angular/router';
 import { WinModalModule } from '../parts/win-modal/win-modal.module';
-import { GameIsStartedGuard } from '../core/guards/game-is-started-guard';
-
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,9 +16,10 @@ import { GameIsStartedGuard } from '../core/guards/game-is-started-guard';
       component: PlayGameComponent,
     }]),
     WinModalModule,
+    ReactiveFormsModule,
   ],
   exports: [
     PlayGameComponent,
   ],
 })
-export class PlayGameModule { }
+export class PlayGameModule {}

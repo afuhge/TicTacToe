@@ -1,6 +1,6 @@
 <div class="opacity-90 rounded-2xl w-[850px] h-[643px] mx-auto py-14 px-8" [ngClass]="classes">
   <div class="flex flex-col items-center justify-around h-full">
-    <h2 class="text-7xl font-semibold">{{ winnerText }}</h2>
-    <button class="secondary-button hover:text-white" (click)="playAgain()" [ngClass]="buttonTextColor">Play again</button>
+    <h2 class="text-7xl font-semibold" [ngClass]="winnerTextClass">{{ winnerText }}</h2>
+    <button (click)="playAgain()" [ngClass]="buttonClasses">Play again</button>
   </div>
 </div>

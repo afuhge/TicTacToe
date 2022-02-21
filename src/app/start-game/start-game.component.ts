@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { GameHelperService } from '../../services/game-helper.service';
 
 @Component({
   selector: 'app-start-game',
   templateUrl: './start-game.component.html',
-  styleUrls: ['./start-game.component.scss']
 })
 export class StartGameComponent {
 
-  constructor(
+  constructor (
     private gameHelperService: GameHelperService,
     private router: Router,
   ) { }
