@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base.css';
+@import 'tailwindcss/components.css';
+@import 'tailwindcss/utilities.css';
+
+body {
+  @apply bg-black text-white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.headline {
+  font-family: 'Bebas Neue', cursive;
+}
+
+.primary-button {
+  @apply bg-white text-2xl font-semibold text-red px-16 py-6 rounded-2xl hover:bg-green hover:text-white;
+}
+
+.secondary-button {
+  @apply bg-white text-2xl border-2 border-white font-semibold px-16 py-6 rounded-2xl;
+}

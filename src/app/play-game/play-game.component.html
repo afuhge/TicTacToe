@@ -1,0 +1,12 @@
+<button (click)="openModal()">Open Modal</button>
+
+<ng-container *ngIf="isGameOver">
+  <ng-container *ngIf="greenWins; else redWins">
+    <app-win-modal [buttonTextColor]="'text-green  hover:bg-green'" [winnerText]="'Green wins!'"
+    [classes]="'bg-green'" (isGameOver)="handleIsGameOver($event)"></app-win-modal>
+  </ng-container>
+  <ng-template #redWins>
+    <app-win-modal [buttonTextColor]="'text-red hover:bg-red'" [winnerText]="'Red wins!'"
+                   [classes]="'bg-red'" (isGameOver)="handleIsGameOver($event)"></app-win-modal>
+  </ng-template>
+</ng-container>
