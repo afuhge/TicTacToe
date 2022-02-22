@@ -1,5 +1,16 @@
 <div class="mx-auto p-8 relative">
-  <div class="grid grid-cols-3 mt-10">
+  <div class="flex items-center space-x-4" *ngIf="counter > 0 && !isGameOver">
+    <div class="text-2xl font-semibold">Next:</div>
+    <div>
+      <ng-container *ngIf="counter %2 !== 0; else redTurn">
+        <img style="height: 40px;" src="assets/O.png" alt="O">
+      </ng-container>
+      <ng-template #redTurn>
+        <img style="height: 40px;" src="assets/X.png" alt="X">
+      </ng-template>
+    </div>
+  </div>
+  <div class="grid grid-cols-3 mt-8">
     <ng-container *ngFor="let fieldItem of field; let i = index;">
       <ng-container *ngFor="let item of fieldItem; let j = index;">
         <div class="h-[186px] flex items-center justify-center py-4 border-white" [ngClass]="getBorderClasses(i,j)">
@@ -15,7 +26,7 @@
 
 <ng-container *ngIf="isGameOver">
   <ng-container *ngIf="winner === 'none';">
-    <div class="absolute top-[25px] left-[25px]">
+    <div class="modal-position">
       <app-win-modal
         [buttonClasses]="'text-green text-2xl border-2 border-green font-semibold px-16 py-6 rounded-2xl hover:bg-green hover:text-white'"
         [winnerText]="'Draw!'"
@@ -26,7 +37,7 @@
     </div>
   </ng-container>
   <ng-container *ngIf="winner === 'green';">
-    <div class="absolute top-[25px] left-[25px]">
+    <div class="modal-position">
       <app-win-modal [buttonClasses]="'text-green  hover:bg-green secondary-button hover:text-white'"
                      [winnerText]="'Green wins!'"
                      [classes]="'bg-green'"
@@ -36,7 +47,7 @@
     </div>
   </ng-container>
   <ng-container *ngIf="winner === 'red'">
-    <div class="absolute top-[25px] left-[25px]">
+    <div class="modal-position">
       <app-win-modal [buttonClasses]="'text-red hover:bg-red secondary-button hover:text-white'"
                      [winnerText]="'Red wins!'"
                      [classes]="'bg-red'"

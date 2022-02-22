@@ -4,16 +4,16 @@ import { GameIsStartedResolver } from './core/resolvers/game-is-started.resolver
 export const routes: Routes = [
   {
     path: 'start',
-    loadChildren: () => import('./start-game/start-game.module').then(m => m.StartGameModule)
+    loadChildren: () => import('./pages/start-game/start-game.module').then(m => m.StartGameModule)
   },
   {
     resolve: [GameIsStartedResolver],
     path: 'play',
-    loadChildren: () => import('./play-game/play-game.module').then(m => m.PlayGameModule)
+    loadChildren: () => import('./pages/play-game/play-game.module').then(m => m.PlayGameModule)
   },
   {
     path: 'info',
-    loadChildren: () => import('./info/info.module').then(m => m.InfoModule)
+    loadChildren: () => import('./pages/info/info.module').then(m => m.InfoModule)
   },
   {
     path: '',
@@ -22,6 +22,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
+    loadChildren: () => import('./pages/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
   },
 ];

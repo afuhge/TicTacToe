@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { FieldStatusEnum } from '../core/enums/field-status.enum';
+import { FieldStatusEnum } from '../../core/enums/field-status.enum';
 
 @Component({
   selector: 'app-play-game',
   templateUrl: './play-game.component.html',
+  styleUrls: ['./play-game.component.scss'],
 })
 export class PlayGameComponent {
   public isGameOver: boolean = false;

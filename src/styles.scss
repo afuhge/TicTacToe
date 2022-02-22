@@ -21,3 +21,24 @@ body {
   @apply bg-white text-2xl border-2 border-white font-semibold px-16 py-6 rounded-2xl hover:text-white;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #272932;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0F7173, #272932, #f05d5e);
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #f05d5e;
+  border-radius: 15px;
+}

@@ -1,0 +1,3 @@
+.bg-blurred-ellipse {
+  @apply absolute -z-10 filter blur-3xl top-0 rounded-full w-[600px] h-full;
+}

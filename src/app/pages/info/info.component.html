@@ -1,0 +1,30 @@
+<div class="flex flex-col items-center p-8 space-y-24">
+  <h1 class="text-5xl">
+    Welcome to <span class="headline">"Tic Tac Toe"</span>
+  </h1>
+  <div class="space-y-12">
+   <div class="layout">
+     <div class="image">
+       <img width="400" class="rounded-2xl" src="assets/play.png" alt="play game">
+     </div>
+     <div class="description">
+      You can start playing <span class="headline text-2xl">Tic Tac Toe</span> by clicking on an empty field.
+       In the upper left corner, you can see who's turn it is.<br>
+       The <span class="font-semibold">first player</span> to place <span class="font-semibold">three items</span> in a row, column, or diagonal <span class="font-semibold">wins the game</span>.
+     </div>
+   </div>
+
+    <div class="layout pt-8">
+      <div class="description">
+        If <span class="text-green">Green</span> wins, a green screen appears, as you can see on the left. Analog if <span class="text-red">red</span> wins.
+        <br>
+        In case of a <span class="font-semibold">draw</span>, a white screen will appear.
+      </div>
+      <div class="image">
+        <img width="400" class="rounded-2xl" src="assets/green_wins.png" alt="Green wins">
+      </div>
+    </div>
+  </div>
+
+  <button class="primary-button" (click)="navigateToStart()">Let's start</button>
+</div>
